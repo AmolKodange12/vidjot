@@ -1,0 +1,8 @@
+{{#if error}}
+  <div class="alert alert-danger">{{error}}</div>   {{!catches errors from passport.js and displays it in a div}}
+{{/if}}
+{{#each errors}} {{!Loop syntax in handlebars}}
+<div class="alert alert-danger">{{text}}</div> {{!Since array errors is passed in the loop,we can access its text by                                                   just writing text}}
+{{else}}
+
+{{/each}} 

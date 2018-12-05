@@ -1,0 +1,10 @@
+18/9/18-USERNAME-Tried to show user name as a dropdown consisting of idea and logout instead of separate options.
+worked only on ideas page,not on index page,not tried on other idea-related pages.
+25/9/18-Figured out the problem-if user not logged in, code showing the name of user would render null and would crash,regardless whether the username is used or not used in the logged out home or about page
+Created a profile page route for user.
+Showed username and dummy profile image tag.
+26/9/18-Added aesthetics
+10/3/18-Added multer functionality which uploads file to app filesystem and shows it in the page,but after page is changed the image disappears.
+10/7/18-Finally added avatar image upload functionality,it stores the image on filesystem,stores its path in mongodb schema and then retrives it to be shown in the profile page.
+10/12/18-Created Ideacount feature and added a search bar,functionality to be added.
+10/27/18-Added Simple search and then upgraded to fuzzy search functionality.

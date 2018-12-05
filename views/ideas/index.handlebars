@@ -1,0 +1,42 @@
+<div class="container" style="display:flex; justify-content:center;flex-wrap: wrap;">
+      <div style="padding-top:5px; flex-grow:1">
+      <h1 style="color:#4285f4">Total ideas:{{ideacount}}</h1>
+      </div>  
+      <div style="margin-left:20px; flex-grow:1">
+        <a href="/ideas/add" class="btn btn-primary">Add Idea</a>
+      </div>
+      <!-- Search form -->
+  
+
+<form class="form-inline form-lg active-cyan-4" style="flex-grow:8;justify-content:flex-end" action="/ideas" method="GET"> <!-- Form for search bar,method is GET becuz we need info -->
+    
+    <i class="fa fa-search fa-2x" aria-hidden="true" style="color:#4285f4"></i>
+    <input class="form-control form-control-lg ml-3 w-50" type="text"placeholder="Search" name="search" aria-label="Search" id="search-bar"> 
+    <input type="submit" value="Search" class="btn btn-primary">
+</form>
+</div>
+{{#each ideas}} {{!Loop through the ideas array, whilst displaying each entry in a div}}
+
+
+  
+    <br>
+<div class="card mb-2" > {{!margin bottom 2 }}
+  <div class="card-body">
+    <h4>{{title}}</h4>
+    <p>{{details}}</p>
+   
+    
+    <div style="display:flex">
+    <a class="btn btn-dark mb-2" href="ideas/edit/{{id}}" style="margin-right:20px" >Edit</a> {{!take objectid from each entry of ideas array and set
+    href to it,to be passed to Edit Idea form code}}
+    <form action="/ideas/{{id}}?_method=DELETE" method="post">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Delete" class="btn btn-danger">
+    </form>
+    </div>
+  </div>
+</div>
+
+{{else}}  
+<h2>No video idea exists</h2>
+{{/each}}

@@ -1,0 +1,11 @@
+{{#if success_msg}}   {{!Used to conditionally render a block of content}}
+  <div class="alert alert-success">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    {{success_msg}}</div>
+{{/if}}
+
+{{#if error_msg}}
+  <div class="alert alert-danger">{{error_msg}}
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  </div>
+{{/if}}
